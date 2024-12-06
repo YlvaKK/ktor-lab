@@ -1,5 +1,6 @@
 package com.example.infrastructure
 
+import com.example.domain.model.DomainBreeds
 import com.example.infrastructure.model.Breeds
 import com.example.infrastructure.model.CatFact
 import io.ktor.client.*
@@ -20,12 +21,12 @@ suspend fun fetchFact(): com.example.domain.model.CatFact {
     return fact.toDomain()
 }
 
-suspend fun fetchBreeds(): Breeds {
+suspend fun fetchBreeds(): DomainBreeds {
     val client = HttpClient(CIO)
     val response: HttpResponse = client.get("https://catfact.ninja/breeds") {
         parameter("limit", "100")
         accept(ContentType.Application.Json)
     }
     val breeds = deserializer.decodeFromString<Breeds>(response.bodyAsText())
-    return breeds
+    return breeds.toDomain()
 }

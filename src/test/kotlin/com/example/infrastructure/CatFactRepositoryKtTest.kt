@@ -41,7 +41,7 @@ class CatFactRepositoryTest {
  fun testSomeUI(): Unit = runBlocking {
   launch(Dispatchers.Main) {
    val breeds = fetchBreeds()
-   assertEquals(breeds.data.size, 98)
+   assertEquals(breeds.breeds.size, 98)
   }
  }
 }
