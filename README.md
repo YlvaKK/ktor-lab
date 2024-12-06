@@ -27,6 +27,8 @@ Modellera domänen och bygg logik för att filtrera en respons från Cat Facts A
 - glöm inte att validera alla domänprimitiv!
 
 ### Deluppgift 3
+✅ Avklarad
+
 Anropa cat facts api för att hämta en lista av alla breeds.
 
 Responsobjekt:
