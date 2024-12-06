@@ -25,11 +25,12 @@ fun Application.configureRouting() {
         }
 
         get("/breeds") {
-            val country: String? = call.pathParameters.get("country")
+            val country: String? = call.request.queryParameters.get("country")
             if (country.isNullOrBlank()) {
                 throw NullPointerException("nooo you have to input a country :(")
             }
             val response: DomainBreeds = fetchBreedsFromACountry(country)
+            call.respondText(Json.encodeToString(response), ContentType.parse("application/json"))
         }
     }
 }

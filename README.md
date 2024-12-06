@@ -23,6 +23,8 @@ BreedRequest
 ```
 
 ### Deluppgift 2
+✅ Avklarad
+
 Modellera domänen och bygg logik för att filtrera en respons från Cat Facts APIs breeds-endpoint utifrån kattrasens ursprungsland.
 - glöm inte att validera alla domänprimitiv!
 
